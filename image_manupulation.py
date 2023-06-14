@@ -5,13 +5,13 @@ import db_execute_query
 def insert_to_db():
 
    # establish a MySQL connection
-   db = db_conn.create_db_connection("localhost", "root", "", "students_details")
+   db = db_conn.create_db_connection("localhost", "root", "", "student_details")
    query_1 = "CREATE TABLE IF NOT EXISTS student_info (id INT, name VARCHAR(255),image_path VARCHAR(250),PRIMARY KEY(id) )"
    cursor = db.cursor()
    cursor.execute(query_1)
 
-   folder_path = "D:/Face_recognization_project/Sem6Project/Input/"
-   parent_dir="D:/Face_recognization_project/Sem6Project/Data/"
+   folder_path = "D:/Face_recognization_system/Sem6Project/Input/"
+   parent_dir="D:/Face_recognization_system/Sem6Project/Data/"
 
    image_files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
 
@@ -53,7 +53,7 @@ def insert_to_db():
 
 
 def retrive():
-   db = db_conn.create_db_connection("localhost", "root", "", "students_details")
+   db = db_conn.create_db_connection("localhost", "root", "", "student_details")
    query2="SELECT id, name, image_path FROM student_info"
 
    classID=[]
@@ -71,7 +71,7 @@ def retrive():
    return  classID,names,images
 
 def crbk():
-  folder_path = "D:/Face_recognization_project/Sem6Project/Input/"
+  folder_path = "D:/Face_recognization_system/Sem6Project/Input/"
   image_files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
   for filename in image_files:
     if os.path.isdir(os.path.join(folder_path, filename)):

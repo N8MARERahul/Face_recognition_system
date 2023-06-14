@@ -3,10 +3,10 @@
     display:flex;
     height:100%;
     width:100%;
-    background-color:#709c95;
+    background:linear-gradient(125deg,#422886,#532975);
 } 
 .table{
-    background-color:#709c95 ;
+    background:linear-gradient(125deg,#422886,#532975);
     text-align: center;
     width: 100%;
     height: 100%;
@@ -17,7 +17,7 @@
 .edit
 {
     position: absolute;
-    background-color:#485b47;
+    background-color:#231970;
     margin-left: 150px;
     width: 570px;
     height:520px;
@@ -41,12 +41,11 @@
 {
     position:absolute;
     top: 10%;
-    left:60%;
-    background:#719284;
-    box-shadow: 
-    -5px -5px 29px #466966, 5px 5px 29px #75aea9;
-    backdrop-filter:blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background:linear-gradient(140deg,rgba(4, 46, 184, 0.25),rgb(7, 124, 156));
+    box-shadow: 8px 0px 30px rgb(41, 42, 49), -15px -15px 60px rgb(52, 5, 123) ;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    left:65%;
     height: 520px;
     width: 420px;
     border-radius: 20px;
@@ -62,10 +61,14 @@
 {
     position: absolute;
     bottom: 2%;
-    right:47%;
+    right:30%;
 }
 
-
+.mainContainer2 .details {
+    position: absolute;
+    bottom: 2%;
+    right:65%;
+}
 
 
 .from-box  .lm{
@@ -73,42 +76,51 @@
     top:12%;
     left:15%;
     font-family: Century Gothic;
-    background:#597058;
+    background:#5e60ce;
     border-radius: 50px;
     height: 80px;
     width: 300px;
     font-size: 20px;
     color: rgb(87, 201, 170);
-    box-shadow: 
-    23px 23px 45px #485b47,
-    -23px -23px 25px #6a8569;
+    
 }
- .input-box
- {
+.input-box .line {
     position: absolute;
-    width: 80%;
-    height: 40%;
-    border-bottom: 4px solid #495b4c;
-} 
+    top: 56%;
+    right:10%;
 
+    background: #040541;
+    height:4px;
+    width:80%;
+}
 .input-box1 .line
 {
     position: absolute;
-    top:63%;
+    top:69%;
     right:10%;
 
-    background: #485b47;
+    background: #040541;
+    height:4px;
+    width:80%;
+}
+.input-box2 .line
+{
+    position: absolute;
+    top: 41.5%;
+    right:10%;
+
+    background: #040541;
     height:4px;
     width:80%;
 }
  .input-box label
 {
     position: absolute;
-    top: 90%;
-    right:5px;
+    top : 51%;
+    right:12%;
     transform: translateY(-50%);
     font-size: 18px;
-    color:rgb(10, 72, 52);
+    color:#48bfe3;
     font-weight: 500;
     pointer-events:none;
     transition: 5s;
@@ -117,11 +129,23 @@
 .input-box1 label
 {
     position: absolute;
-    top: 60%;
+    top: 38%;
     right:12%;
     transform: translateY(-50%);
     font-size: 18px;
-    color:rgb(10, 72, 52);
+    color:#48bfe3;
+    font-weight: 500;
+    pointer-events:none;
+    transition: 5s;
+}
+.input-box2 label
+{
+    position: absolute;
+    top: 65%;
+    right:12%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color:#48bfe3;
     font-weight: 500;
     pointer-events:none;
     transition: 5s;
@@ -139,18 +163,24 @@
     top: 55px;
 
 }
+.input-box2 input:focus~label,
+.input-box2 input:valid~label
+{
+    top: 60px;
+
+}
 
 
  ion-icon
 {
     font-size: 30px;
-    color: #073f2c;
+    color: #040539;
 }
 .input-box input
 {
     position: absolute;
-    top: 87%;
-    left:30%;
+    top: 50%;
+    left:33%;
     
     background: transparent;
     border:none;
@@ -162,9 +192,20 @@
 .input-box1 input
 {
     position: absolute;
-    top: 57%;
+    top: 36%;
     left:35%;
-    
+    background: transparent;
+    border:none;
+    outline: none;
+    text-align:left;
+    text-decoration:solid;
+    font-size: 16px;
+}
+.input-box2 input
+{
+    position: absolute;
+    top: 62%;
+    left:32%;
     background: transparent;
     border:none;
     outline: none;
@@ -176,25 +217,30 @@
 .from-box button
 {
     position: absolute;
-    top:75%;
+    top:77%;
     width: 30%;
     height: 6%;
     left: 140px;
-    background: #495b46;
-    border: #495b46;
+    background: #56cfe1;
+    border: #56cfe1;
     border-radius: 6px;
     cursor:pointer;
 
 }
 .input-box .pr-ion
 {
-    position:absolute;
-    top:80%;
+    position:absolute; 
+    top:48%;
 } 
 .input-box1 .id-ion
 {
     position:absolute;
-    top:55%;
+    top:61%;
+}
+.input-box2 .id-ion
+{
+    position:absolute;
+    top:35%;
 }
 .video {
     width: 500px;

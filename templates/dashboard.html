@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'dashboard.css') }}">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    
+    <main class="table">
+        <section class="table_head">
+            <h2>Student Details</h2>
+            <div class="home">
+                <span class="home_button">
+                    <a href="{{ url_for('home') }}"><ion-icon name="home"></ion-icon></a>
+                </span>
+            </div>
+            <div class="update">
+                <span class="update_butn"><a href = "{{ url_for('update') }}">Update</a></span>
+            </div>
+            </div>
+            <div class ="search-box"><form method="post">
+            <input type="text" class = 'text' placeholder="search by Semester" name = 'sem' required>
+            <button class="icon-search"><ion-icon name="search-outline"></ion-icon></button>
+            </form></div>
+        </section>
+        <section class="table-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th >ID</th>
+                        <th >Name</th>
+                        <th >Total Attendance</th>
+                        <th >Semester</th>
+                    </tr>
+                </thead>
+
+                {% for result in results %}
+                <tbody>
+                   <tr>
+                    <td >{{ result[0] }}</td>
+                    <td >{{ result[1] }}</td>
+                    <td >{{ result[3] }}</td>
+                    <td ><p class="status sem{{ result[2] }}">Sem {{ result[2] }}</p></td>
+                   </tr> 
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</body>
+</html>
