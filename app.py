@@ -35,7 +35,7 @@ def update():
         id = request.form['id']
         name = request.form['name']
         sem = request.form['sem']
-        db = db_conn.create_db_connection("localhost", "root", "", "students_details")
+        db = db_conn.create_db_connection("localhost", "root", "", "student_details")
         query_1 = "select id from student_info"
         results = db_execute_query.read_query_(db, query_1)
         id_list = []
@@ -62,7 +62,7 @@ def details():
     image = url_for('static', filename = 'person.png')
     if(request.method == 'POST') :       
         id = request.form['id']
-        connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
+        connection = db_conn.create_db_connection('localhost', 'root', '', 'student_details')
         query = "select name, total_att from total_attendence where id = %s"
         results = db_execute_query.read_query(connection, query, id)
         if not results:
@@ -121,7 +121,7 @@ def get_data():
     total_attendence = ''
     id = recogniseImg(camera)  
     if id != 0 or id != None:
-        connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
+        connection = db_conn.create_db_connection('localhost', 'root', '', 'student_details')
         query = "select name, total_att from total_attendence where id = %s"
         results = db_execute_query.read_query(connection, query, id)
         connection.close()
@@ -137,7 +137,7 @@ def login():
         session.pop('user_id', None)
         username = request.form['username']
         password = request.form['password']
-        connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
+        connection = db_conn.create_db_connection('localhost', 'root', '', 'student_details')
         query = "select login_id, password from login where username = %s"
         results = db_execute_query.read_query(connection, query, username)
         connection.close()
@@ -156,7 +156,7 @@ def login():
 
 @app.route('/dashboard', methods = ['GET', 'POST'])
 def dashboard():
-    connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
+    connection = db_conn.create_db_connection('localhost', 'root', '', 'student_details')
     query = "select * from total_attendence"
     details = db_execute_query.read_query_(connection, query)
     if request.method == 'POST':
